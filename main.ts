@@ -39,7 +39,7 @@ basic.forever(function () {
             . . # . .
             . . . . .
             `)
-        basic.pause(200)
+        basic.pause(20)
         basic.showLeds(`
             . # . # .
             # . # . #
@@ -47,10 +47,10 @@ basic.forever(function () {
             . # . # .
             . . # . .
             `)
-        powerbrick.Servo(powerbrick.Servos.S5, 0)
+        powerbrick.Servo(powerbrick.Servos.S2, 0)
+        powerbrick.Servo(powerbrick.Servos.S4, 0)
         powerbrick.Servo(powerbrick.Servos.S6, 0)
-        powerbrick.Servo(powerbrick.Servos.S7, 0)
         powerbrick.Servo(powerbrick.Servos.S8, 0)
     }
-    basic.pause(200)
+    basic.pause(20)
 })
