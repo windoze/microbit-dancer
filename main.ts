@@ -1,5 +1,5 @@
 let noise = 0
-let angle = 90
+let angle = 100
 powerbrick.Servo(powerbrick.Servos.S2, angle)
 powerbrick.Servo(powerbrick.Servos.S4, angle)
 powerbrick.Servo(powerbrick.Servos.S6, angle)
@@ -18,7 +18,7 @@ powerbrick.Servo(powerbrick.Servos.S8, 0)
 basic.forever(function () {
     noise = powerbrick.SoundSensor(powerbrick.PortsA.PORT1)
     serial.writeLine("" + (noise))
-    angle = randint(90, 180)
+    angle = randint(60, 100)
     if (noise > 100) {
         if (Math.randomBoolean()) {
             powerbrick.Servo(powerbrick.Servos.S2, angle)
@@ -40,6 +40,10 @@ basic.forever(function () {
             . . . . .
             `)
         basic.pause(20)
+        powerbrick.Servo(powerbrick.Servos.S2, 0)
+        powerbrick.Servo(powerbrick.Servos.S4, 0)
+        powerbrick.Servo(powerbrick.Servos.S6, 0)
+        powerbrick.Servo(powerbrick.Servos.S8, 0)
         basic.showLeds(`
             . # . # .
             # . # . #
@@ -47,10 +51,6 @@ basic.forever(function () {
             . # . # .
             . . # . .
             `)
-        powerbrick.Servo(powerbrick.Servos.S2, 0)
-        powerbrick.Servo(powerbrick.Servos.S4, 0)
-        powerbrick.Servo(powerbrick.Servos.S6, 0)
-        powerbrick.Servo(powerbrick.Servos.S8, 0)
     }
     basic.pause(20)
 })
