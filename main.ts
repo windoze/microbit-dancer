@@ -17,8 +17,9 @@ powerbrick.Servo(powerbrick.Servos.S6, 0)
 powerbrick.Servo(powerbrick.Servos.S8, 0)
 basic.forever(function () {
     noise = powerbrick.SoundSensor(powerbrick.PortsA.PORT1)
-    serial.writeLine("" + (noise))
     angle = randint(60, 100)
+    serial.writeLine("Loudness: " + noise)
+    serial.writeLine("Angle: " + angle)
     if (noise > 100) {
         if (Math.randomBoolean()) {
             powerbrick.Servo(powerbrick.Servos.S2, angle)
